@@ -1,0 +1,67 @@
+name: Bug report
+description: Report a problem in Atomic Launcher / Prijavite grešku
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can write in English or Serbian / Možete pisati na engleskom ili srpskom.
+        **This report and its attachments will be public.** Review recordings and diagnostics before uploading them.
+        Please report one problem per issue.
+  - type: input
+    id: build
+    attributes:
+      label: Launcher build / Verzija
+      description: Copy the full build marker from Report a bug, not only Beta 0.1.
+      placeholder: V72ID
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version / Telefon i Android
+      placeholder: Samsung SM-S938B, Android 16
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected feature / Oblast
+      options:
+        - Icons and layout (Grid / Freestyle)
+        - Swap / Insert / Folder
+        - Widgets and decorations
+        - Dock and tab transfer
+        - Quick menu / Settings / Themes
+        - App drawer
+        - Bug report / Recording
+        - Backup / Restore
+        - Crash / Launcher restart
+        - Other / Drugo
+    validations:
+      required: false
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened? / Šta se dogodilo?
+      description: Describe what went wrong and, if possible, how to reproduce it.
+      placeholder: |
+        1. Open...
+        2. Drag or tap...
+        3. The problem appears...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result / Očekivano ponašanje
+    validations:
+      required: false
+  - type: textarea
+    id: attachments
+    attributes:
+      label: Diagnostic ZIP, video or screenshot / Prilozi
+      description: Attach your atomic-report ZIP here. Review it first because uploaded files are public. If you have no ZIP, you can still submit the report.
+    validations:
+      required: false
